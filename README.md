@@ -35,5 +35,3 @@ smart-document-analyzer/
 └── requirements.txt
 ```
 
-
-5. Submit a pull request
