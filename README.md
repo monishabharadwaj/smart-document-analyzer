@@ -47,12 +47,6 @@ python quick_start.py
 # Or directly start API server
 python api_server.py
 ```
-
-### 3. Access the API
-- **API Server**: http://localhost:8000
-- **Interactive Docs**: http://localhost:8000/docs
-- **API Documentation**: http://localhost:8000/redoc
-
 ## 🔧 API Endpoints
 
 | Method | Endpoint | Description |
@@ -93,36 +87,6 @@ python api_server.py
 - **Technology**: Sentence Transformers + FAISS
 - **Features**: Vector similarity search
 - **Capabilities**: Natural language queries
-
-## 📊 Example Usage
-
-### Analyze a Document
-```python
-import requests
-
-response = requests.post(
-    "http://localhost:8000/analyze/document",
-    json={
-        "text": "Your document text here...",
-        "doc_id": "my_document"
-    }
-)
-
-result = response.json()
-print(f"Classification: {result['data']['classification']}")
-print(f"Entities: {result['data']['entities']}")
-```
-
-### Search Documents
-```python
-response = requests.post(
-    "http://localhost:8000/search/documents",
-    json={
-        "query": "artificial intelligence research",
-        "top_k": 5
-    }
-)
-```
 
 ##  Technology Stack
 
