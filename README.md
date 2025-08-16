@@ -31,22 +31,6 @@ smart-document-analyzer/
 └── requirements.txt            # Dependencies
 ```
 
-##  Quick Start
-
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-```
-
-### 2. Start the System
-```bash
-# Interactive menu (recommended)
-python quick_start.py
-
-# Or directly start API server
-python api_server.py
-```
 ## 🔧 API Endpoints
 
 | Method | Endpoint | Description |
