@@ -1,0 +1,57 @@
+SOFTWARE DEVELOPMENT CONTRACT
+
+Contract Number: SDC-2024-007
+Effective Date: March 1, 2024
+Expiration Date: March 1, 2025
+
+PARTIES:
+Client: MegaCorp Industries
+Address: 789 Enterprise Boulevard, Chicago, IL 60601
+Contact: Sarah Johnson, CTO
+Phone: (312) 555-0123
+Email: s.johnson@megacorp.com
+
+Developer: Digital Solutions LLC
+Address: 321 Innovation Way, Austin, TX 78701
+Contact: Michael Chen, Project Director  
+Phone: (512) 555-0456
+Email: m.chen@digitalsolutions.com
+
+PROJECT SCOPE:
+Digital Solutions LLC agrees to develop a custom enterprise resource planning (ERP) system for MegaCorp Industries. The system will include:
+
+1. Inventory Management Module
+2. Customer Relationship Management (CRM) Integration
+3. Financial Reporting Dashboard
+4. Multi-user Authentication System
+5. Mobile Application Interface
+
+DELIVERABLES:
+- Phase 1: System Architecture and Design (Due: April 15, 2024)
+- Phase 2: Core Development and Testing (Due: August 30, 2024) 
+- Phase 3: Integration and Deployment (Due: December 15, 2024)
+- Phase 4: Training and Documentation (Due: February 28, 2025)
+
+COMPENSATION:
+Total Contract Value: $275,000.00
+Payment Schedule:
+- 25% upon contract signing: $68,750.00
+- 25% upon Phase 1 completion: $68,750.00  
+- 25% upon Phase 2 completion: $68,750.00
+- 25% upon final delivery and acceptance: $68,750.00
+
+TERMS AND CONDITIONS:
+1. All work shall be performed by qualified software engineers
+2. Source code remains property of MegaCorp upon final payment
+3. 90-day warranty period for bug fixes and minor modifications
+4. Confidentiality agreement applies to all proprietary information
+5. Either party may terminate with 30 days written notice
+
+GOVERNING LAW:
+This contract shall be governed by the laws of the State of Texas.
+
+Client Signature: _________________ Date: _________
+Sarah Johnson, CTO
+
+Developer Signature: _________________ Date: _________  
+Michael Chen, Project Director

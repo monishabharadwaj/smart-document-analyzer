@@ -1,0 +1,38 @@
+INVOICE
+
+Invoice Number: INV-2024-001
+Date: January 15, 2024
+
+Bill To:
+John Smith
+ABC Corporation
+123 Business Street
+New York, NY 10001
+
+From:
+TechSolutions Inc.
+456 Technology Drive
+San Francisco, CA 94102
+
+Description of Services:
+- Software Development Services (January 2024)
+- Technical Consulting: 40 hours @ $150/hour
+- Project Management: 20 hours @ $100/hour  
+- Code Review and Testing: 15 hours @ $125/hour
+
+Itemized Charges:
+Technical Consulting    40 hours x $150.00    $6,000.00
+Project Management     20 hours x $100.00    $2,000.00
+Code Review & Testing  15 hours x $125.00    $1,875.00
+
+Subtotal: $9,875.00
+Tax (8.25%): $814.69
+Total Amount Due: $10,689.69
+
+Payment Terms: Net 30 days
+Due Date: February 14, 2024
+
+Payment can be made by check, wire transfer, or credit card.
+Please remit payment to the address above or contact our accounts receivable department at accounting@techsolutions.com.
+
+Thank you for your business!

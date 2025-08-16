@@ -41,6 +41,30 @@
             "program": "${workspaceFolder}/test_api.py",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "⚛️ Frontend (React)",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/frontend",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "dev"],
+            "console": "integratedTerminal",
+            "serverReadyAction": {
+                "pattern": "Local:.*http://localhost:([0-9]+)",
+                "uriFormat": "http://localhost:%s",
+                "action": "openExternally"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "🚀 Full Stack App (Backend + Frontend)",
+            "configurations": [
+                "Start API Server",
+                "⚛️ Frontend (React)"
+            ],
+            "stopAll": true
         }
     ]
 }
