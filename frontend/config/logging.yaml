@@ -1,0 +1,68 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  default:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  detailed:
+    format: '%(asctime)s - %(name)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(funcName)s - %(message)s'
+  json:
+    format: '{"timestamp": "%(asctime)s", "name": "%(name)s", "level": "%(levelname)s", "message": "%(message)s", "module": "%(module)s", "line": %(lineno)d}'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: default
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/smart_document_analyzer.log
+    maxBytes: 10485760  # 10MB
+    backupCount: 5
+
+  error_file:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: detailed
+    filename: logs/errors.log
+    maxBytes: 10485760  # 10MB
+    backupCount: 3
+
+loggers:
+  services.preprocessing:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+  services.classification:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+  services.ner:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+  services.summarization:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+  services.semantic_search:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+  scripts:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+root:
+  level: INFO
+  handlers: [console, file, error_file]

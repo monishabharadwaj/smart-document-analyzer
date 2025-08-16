@@ -1,0 +1,179 @@
+# Smart Document Analyzer Configuration
+
+# Model Configurations
+models:
+  # Document Classification
+  classification:
+    default_model_type: 'traditional'  # 'traditional' or 'transformer'
+    traditional_model:
+      vectorizer_max_features: 10000
+      ngram_range: [1, 3]
+      classifier: 'random_forest'  # 'random_forest', 'svm', 'naive_bayes'
+      n_estimators: 100
+    transformer_model:
+      model_name: 'microsoft/DialoGPT-medium'
+      max_length: 512
+  
+  # Named Entity Recognition
+  ner:
+    default_model: 'en_core_web_sm'  # SpaCy model
+    custom_model_path: null
+    include_custom_entities: true
+    confidence_threshold: 0.8
+  
+  # Document Summarization
+  summarization:
+    default_model_type: 'extractive'  # 'extractive', 'abstractive', 'hybrid'
+    extractive:
+      sentence_model: 'all-MiniLM-L6-v2'
+      summary_ratio: 0.3
+    abstractive:
+      model_name: 'facebook/bart-large-cnn'  # or 'sshleifer/distilbart-cnn-12-6'
+      max_length: 150
+      min_length: 30
+      max_chunk_length: 1024
+    hybrid:
+      extractive_ratio: 0.5
+      final_max_length: 200
+  
+  # Semantic Search
+  semantic_search:
+    model_name: 'all-MiniLM-L6-v2'
+    index_type: 'flat'  # 'flat', 'ivf', 'hnsw'
+    embedding_dimension: 384
+    similarity_threshold: 0.0
+    chunk_size: 500
+    chunk_overlap: 50
+
+# File Processing
+file_processing:
+  supported_formats: ['pdf', 'docx', 'txt']
+  max_file_size_mb: 50
+  text_extraction:
+    pdf_method: 'pdfplumber'  # 'pdfplumber', 'PyPDF2'
+    docx_method: 'python-docx'
+    ocr_enabled: false
+    ocr_language: 'eng'
+  
+  preprocessing:
+    remove_stopwords: true
+    use_stemming: false
+    use_lemmatization: true
+    min_word_length: 2
+    max_text_length: 50000
+
+# Database and Storage
+storage:
+  models_directory: './models'
+  data_directory: './data'
+  index_directory: './indices'
+  logs_directory: './logs'
+  temp_directory: './temp'
+  
+  # Vector Database (ChromaDB)
+  chroma_db:
+    persist_directory: './chroma_db'
+    collection_name: 'documents'
+  
+  # FAISS Index
+  faiss:
+    index_file_prefix: 'document_index'
+    auto_save_threshold: 1000  # Save after adding this many documents
+
+# API Configuration
+api:
+  host: '0.0.0.0'
+  port: 8000
+  debug: false
+  cors_origins: ['*']
+  max_query_length: 1000
+  rate_limit:
+    requests_per_minute: 60
+    burst_limit: 10
+
+# Training Configuration
+training:
+  # Classification Training
+  classification:
+    validation_split: 0.2
+    test_split: 0.1
+    cross_validation_folds: 5
+    random_state: 42
+    early_stopping: true
+    patience: 5
+  
+  # NER Training
+  ner:
+    n_iterations: 30
+    batch_size: 32
+    learning_rate: 0.001
+    dropout: 0.5
+    validation_split: 0.2
+  
+  # General Training Settings
+  general:
+    save_checkpoints: true
+    checkpoint_frequency: 10
+    use_gpu: true
+    mixed_precision: false
+
+# Logging Configuration
+logging:
+  level: 'INFO'  # 'DEBUG', 'INFO', 'WARNING', 'ERROR'
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file_logging: true
+  console_logging: true
+  max_file_size_mb: 10
+  backup_count: 5
+  
+  # Component-specific logging
+  components:
+    preprocessing: 'INFO'
+    classification: 'INFO'
+    ner: 'INFO'
+    summarization: 'INFO'
+    semantic_search: 'INFO'
+
+# Performance Settings
+performance:
+  # Threading and Multiprocessing
+  max_workers: 4
+  use_multiprocessing: false
+  
+  # Memory Management
+  max_memory_usage_gb: 8
+  garbage_collection_frequency: 100
+  
+  # Caching
+  enable_caching: true
+  cache_size_mb: 500
+  cache_ttl_minutes: 60
+
+# Security Settings
+security:
+  # Input Validation
+  max_input_length: 100000
+  allowed_file_types: ['.pdf', '.docx', '.txt']
+  scan_uploads: false
+  
+  # Data Privacy
+  anonymize_entities: false
+  log_sensitive_data: false
+  
+  # API Security
+  require_api_key: false
+  api_key_header: 'X-API-Key'
+  cors_enabled: true
+
+# Feature Flags
+features:
+  enable_gpu_acceleration: true
+  enable_model_caching: true
+  enable_result_caching: true
+  enable_metrics_collection: true
+  enable_auto_model_updates: false
+  
+  experimental:
+    enable_multi_language: false
+    enable_document_versioning: false
+    enable_collaborative_filtering: false
