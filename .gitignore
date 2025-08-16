@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.py[cod]
@@ -92,12 +93,33 @@ frontend/*.local
 !.vscode/tasks.json
 !.vscode/extensions.json
 .idea/
+=======
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+>>>>>>> b36804c1d1bcb3be33880503bc47b4476c137941
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 
 # Logs
 logs
@@ -123,3 +145,6 @@ temp/
 # Config files with secrets (if any)
 config/secrets.py
 .env.production
+=======
+.env
+>>>>>>> b36804c1d1bcb3be33880503bc47b4476c137941
