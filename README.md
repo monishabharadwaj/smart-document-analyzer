@@ -31,20 +31,6 @@ smart-document-analyzer/
 └── requirements.txt            # Dependencies
 ```
 
-## 🔧 API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/analyze/document` | Full document analysis (all features) |
-| POST | `/extract/entities` | Named entity extraction only |
-| POST | `/classify/document` | Document type classification |
-| POST | `/summarize/text` | Text summarization |
-| POST | `/search/documents` | Semantic document search |
-| POST | `/batch/analyze` | Process multiple documents |
-| POST | `/upload/document` | Upload and analyze file |
-| GET | `/collection/insights` | Analytics and statistics |
-| GET | `/health` | System health check |
-
 ##  Core Components
 
 ### 1. Document Processor
@@ -129,5 +115,7 @@ This project was built as a complete end-to-end document analysis system, demons
 - Production-ready code practices
 
 ---
+
+**The Smart Document Analyzer effectively integrates ML, NLP, and web development to provide a complete document processing solution. By leveraging modern ML models like BERT, spaCy, and transformer-based summarizers, it offers high accuracy, efficiency, and usability. Users can upload documents, receive classified results, extract key entities, get summaries, and perform semantic searches—all through a clean, responsive web interface.**
 
 **Built with  using Python, FastAPI, and modern NLP libraries**
