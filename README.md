@@ -99,16 +99,6 @@ smart-document-analyzer/
 - ✅ **Logging**: Structured logging throughout
 - ✅ **Documentation**: Complete API documentation
 
-## 🧪 Testing
-
-```bash
-# Run integration tests
-python integration_test.py
-
-# Test individual components
-python quick_start.py  # Select option 2 for demo
-```
-
 ## Dependencies
 
 - `fastapi`: Web framework for building APIs
