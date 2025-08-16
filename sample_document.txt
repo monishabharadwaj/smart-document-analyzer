@@ -1,0 +1,11 @@
+Smart Document Analyzer - Test Document
+
+This is a sample document for testing our document processing capabilities.
+
+Key Features to Test:
+1. Text extraction from various file formats
+2. Text cleaning and normalization
+3. Entity recognition and extraction
+4. Document classification capabilities
+
+

@@ -1,0 +1,46 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Start API Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/api_server.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": []
+        },
+        {
+            "name": "Run Integration Demo",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/integration_demo.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Run Final Test",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/final_test.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Test API Endpoints",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_api.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

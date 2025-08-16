@@ -1,0 +1,91 @@
+### Smart Document Analyzer API Tests
+### Make sure the API server is running first: python api_server.py
+
+@baseUrl = http://localhost:8000
+
+### Health Check
+GET {{baseUrl}}/
+Content-Type: application/json
+
+###
+GET {{baseUrl}}/health
+Content-Type: application/json
+
+### Analyze Document
+POST {{baseUrl}}/analyze/document
+Content-Type: application/json
+
+{
+  "text": "INVOICE #INV-2024-001\nDate: January 15, 2024\nBill To: TechCorp Inc.\nTotal: $5,500.00\nDue Date: February 15, 2024\nContact: billing@vendor.com",
+  "doc_id": "test_invoice_001",
+  "metadata": {
+    "type": "invoice",
+    "source": "api_test"
+  }
+}
+
+### Extract Entities
+POST {{baseUrl}}/extract/entities
+Content-Type: application/json
+
+{
+  "text": "Contact John Smith at john.smith@company.com or call (555) 123-4567. Payment of $2,500.00 is due on January 15, 2024."
+}
+
+### Classify Document
+POST {{baseUrl}}/classify/document
+Content-Type: application/json
+
+{
+  "text": "This research paper investigates the effects of artificial intelligence on modern business processes. Our methodology involved analyzing 150 companies across different sectors."
+}
+
+### Summarize Text
+POST {{baseUrl}}/summarize/text
+Content-Type: application/json
+
+{
+  "text": "Artificial intelligence has made significant progress in recent years. Machine learning algorithms are being used in various industries including healthcare, finance, and transportation. Deep learning models have achieved remarkable results in image recognition and natural language processing. The impact of AI on society continues to grow as more companies adopt these technologies.",
+  "ratio": 0.4,
+  "summary_type": "extractive"
+}
+
+### Search Documents
+POST {{baseUrl}}/search/documents
+Content-Type: application/json
+
+{
+  "query": "artificial intelligence machine learning",
+  "top_k": 5
+}
+
+### Batch Process Documents
+POST {{baseUrl}}/batch/analyze
+Content-Type: application/json
+
+{
+  "documents": [
+    {
+      "id": "batch_doc_1",
+      "text": "Invoice #123 - Total: $1,000.00 - Due: March 1, 2024",
+      "metadata": {"source": "batch_test"}
+    },
+    {
+      "id": "batch_doc_2", 
+      "text": "Research findings show 85% improvement in efficiency using AI automation.",
+      "metadata": {"source": "batch_test"}
+    }
+  ]
+}
+
+### Get Collection Insights
+GET {{baseUrl}}/collection/insights
+Content-Type: application/json
+
+### List Documents
+GET {{baseUrl}}/collection/documents
+Content-Type: application/json
+
+### Clear Collection (be careful!)
+# DELETE {{baseUrl}}/collection/clear
+# Content-Type: application/json
